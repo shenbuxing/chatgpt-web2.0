@@ -16,7 +16,6 @@ const Chat = dynamic(async () => (await import("../chat/chat")).Chat);
 const Role = dynamic(async () => (await import("../role/role")).Role);
 const Auth = dynamic(async () => (await import("../auth/auth")).Auth);
 const Sale = dynamic(async () => (await import("../sale/sale")).Sale);
-
 function Screen() {
     const config = useAppConfig();
     const access = useAccessStore();

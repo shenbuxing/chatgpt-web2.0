@@ -3,8 +3,8 @@ import {useAccessStore} from "@/app/store/access";
 import {MessageRole} from "@/types/chat";
 
 // 构建前把localhost修改为你的公网IP或者域名地址
-const apiHostUrl = "https://api.gaga.plus";
-
+// const apiHostUrl = "http://117.72.64.209:8091";
+const apiHostUrl = "http://localhost:8091";
 /**
  * Header 信息
  */
@@ -48,6 +48,8 @@ export const completions = (data: {
  */
 export const login = (token: string) => {
     const accessState = useAccessStore.getState()
+    console.log("code",accessState.accessCode)
+    console.log("token",token)
     return fetch(`${apiHostUrl}/api/v1/auth/login`, {
         method: 'post',
         headers: {

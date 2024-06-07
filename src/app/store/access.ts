@@ -12,7 +12,6 @@ export interface AccessControlStore {
     login: () => Promise<string>;
     goToLogin: () => void;
 }
-
 export const useAccessStore: any = create<AccessControlStore>()(
     persist(
         (set, get) => ({
@@ -35,7 +34,9 @@ export const useAccessStore: any = create<AccessControlStore>()(
             async login() {
                 const res = await login(get().accessCode);
                 const { data, code } = await res.json();
-                console.log("data", data);
+                console.log("这里的res", res.text());
+                console.log("这里的data", data);
+                console.log("这里的code", code);
                 // 这里需要根据返回结果设置
                 if (code === "0000") {
                     console.log("登陆成功");

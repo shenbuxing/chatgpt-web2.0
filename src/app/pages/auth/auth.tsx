@@ -10,21 +10,21 @@ export function Auth() {
     return (
         <div className={styles["auth-page"]}>
             <ChatGPTIcon/>
-            <div className={styles["auth-title"]}>OpenAiHub</div>
+            <div className={styles["auth-title"]}>ChatAiHub</div>
             <div className={styles["auth-sub-title"]}>
-                学习AI开发、掌握AI部署、运用AI提效
+                运用AI提效,部署模型进行对比参考
             </div>
             <img
                 src="/qrcode.png"
                 style={{width: 250}}
             />
             <div className={styles["auth-tips"]}>
-                扫码关注公众号【小傅哥】，
+                扫码关注公众号【程序员沈剑英】，
                 <a
                     href="/qrcode.jpg"
                     target="_blank"
                 >
-                    回复【403】获取访问密码
+                    回复任意字符获取访问密码
                 </a>
             </div>
 
@@ -41,16 +41,13 @@ export function Auth() {
             />
             {access.accessCodeErrorMsgs ?
                 <span className={styles['auth-error']}>{access.accessCodeErrorMsgs}</span> : null}
-
-
             <div className={styles["auth-actions"]}>
                 <Button type="primary" onClick={() => access.login()}>确认登录👣</Button>
-                <Button type="text"
-                        onClick={() => window.open('https://bugstack.cn/md/project/chatgpt/chatgpt.html')}>此项目地址</Button>
+                {/*<Button type="text"*/}
+                {/*        onClick={() => window.open('https://bugstack.cn/md/project/chatgpt/chatgpt.html')}>此项目地址</Button>*/}
             </div>
             <hr></hr>
             <span>
-                说明：此平台以学习OpenAI项目开发的演示站点，不提供OpenAI在线服务。一且操作都为项目的验证，学习编程技术为主。
             </span>
         </div>
     );
